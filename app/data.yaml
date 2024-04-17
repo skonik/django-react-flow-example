@@ -57,7 +57,11 @@ edges:
     source: PAID
     target: REJECTED
     animated: true
-    markerEnd: kafka
+    markerEnd:
+      type: arrow
+      strokeWidth: 2px
+      markerUnits: 5px
+    label: Юзер отклонил
   - id: CREATED
     source: CREATED
     target: PAID
@@ -66,9 +70,11 @@ edges:
       type: arrow
       strokeWidth: 2px
       markerUnits: 5px
+    label: Юзер создал
   - id: PAID-DELIVERY
     source: PAID
     target: DELIVERY
+    label: Курьер взял в работу
     animated: true
     markerEnd:
       type: arrow
@@ -77,6 +83,7 @@ edges:
   - id: REJECTED-CREATED
     source: REJECTED
     target: CREATED
+    label: Юзер создал повторно
     animated: true
     markerEnd:
       type: arrow
