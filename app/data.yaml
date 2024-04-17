@@ -1,0 +1,85 @@
+
+---
+nodes:
+  - id: PAID
+    position:
+      x: 400
+      y: 550
+    style:
+      border: '2px solid #74D6F7'
+      background: white
+      color: black
+    data:
+      label: "Оплачено"
+    sourcePosition: right
+    targetPosition: left
+  - id: REJECTED
+    position:
+      x: 800
+      y: 400
+    data:
+      label: Отклонено
+    style:
+      border: '2px red #74D6F7'
+      background: white
+      color: black
+    sourcePosition: right
+    targetPosition: left
+    width: 480
+  - id: DELIVERY
+    position:
+      x: 800
+      y: 500
+    data:
+      label: На доставке
+    style:
+      border: '2px solid #74D6F7'
+      background: white
+      color: black
+    sourcePosition: right
+    targetPosition: left
+    width: 456
+  - id: CREATED
+    position:
+      x: 0
+      y: 400
+    data:
+      label: Создано
+    style:
+      border: '2px solid #74D6F7'
+      background: white
+      color: black
+    sourcePosition: right
+    targetPosition: left
+    width: 228
+edges:
+  - id: PAID-REJECTED
+    source: PAID
+    target: REJECTED
+    animated: true
+    markerEnd: kafka
+  - id: CREATED
+    source: CREATED
+    target: PAID
+    animated: true
+    markerEnd:
+      type: arrow
+      strokeWidth: 2px
+      markerUnits: 5px
+  - id: PAID-DELIVERY
+    source: PAID
+    target: DELIVERY
+    animated: true
+    markerEnd:
+      type: arrow
+      strokeWidth: 2px
+      markerUnits: 5px
+  - id: REJECTED-CREATED
+    source: REJECTED
+    target: CREATED
+    animated: true
+    markerEnd:
+      type: arrow
+      strokeWidth: 2px
+      markerUnits: 5px
+

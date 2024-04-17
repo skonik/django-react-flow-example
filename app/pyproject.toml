@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django-react-flow-example"
+version = "0.1.0"
+description = ""
+authors = ["Sergei Konik <s.konik.dev@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_react_flow_example"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.4"
+django-react-flow = "0.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
